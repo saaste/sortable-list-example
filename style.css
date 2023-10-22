@@ -1,0 +1,42 @@
+.sortable-list {
+    width: 80%;
+    margin: 0 auto;
+    list-style-type: none;
+    padding: 1em;
+    font-size: 1.2em;
+}
+
+.item {
+    border: 1px solid #DDD;
+    background-color: #efefef;
+    color: #333;
+    transition: all .3s;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    border-radius: 10px;
+}
+
+.label {
+    text-align: left;
+    align-self: center;
+    padding-left: 1em;
+}
+
+.dragblock {
+    cursor: pointer;
+    display: inline-block;
+    width: 1em;
+    background-color: red;
+    margin-right: 0.5em;
+}
+
+.item.on-drag {
+    transform: scale(1.03, 1.03);
+    background-color: #a76f6f;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+
