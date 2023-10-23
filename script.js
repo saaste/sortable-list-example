@@ -55,9 +55,9 @@ const handleTouchMove = (e) => {
 }
 
 const handleDragStart = (e) => {
-    
-    if (!draggedElement && e.explicitOriginalTarget.classList.contains(dragElementClass)) {
-        draggedElement = findDraggedListItem(e.srcElement);
+    const dragElement = document.elementFromPoint(e.clientX, e.clientY);
+    if (!draggedElement && dragElement.classList.contains(dragElementClass)) {
+        draggedElement = e.target;
         draggedElement.classList.add(onDragClass);
     }
 }
@@ -85,7 +85,6 @@ const findDraggedListItem = (element) => {
             return element;
         }
         element = element.parentNode;
-        console.log(element);
     }
     return null;
 }
